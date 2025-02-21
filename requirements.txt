@@ -1,5 +1,5 @@
 requests
-requests-html
 bs4
-lxml
-lxml_html_clean
+pyyaml
+pandas
+urllib
