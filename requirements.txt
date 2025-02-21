@@ -3,3 +3,8 @@ bs4
 pyyaml
 pandas
 urllib
+openpyxl
+xlrd
+python-calamine
+odfpy
+pyxlsb
