@@ -111,7 +111,7 @@ def main():
         links = make_google_search(i)
         find_emails(links)
         print(f"current searched pages: {i+10}")
-        time.sleep(1)
+        time.sleep(5);print("sleeping 5 seconds")
 
 
 
