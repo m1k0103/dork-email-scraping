@@ -1,3 +1,5 @@
 intext:@"yahoo|gmail|hotmail|teamaol|outlook".com | intext:@"hotmail.co.uk"|"apache.org" ext:csv | ext:txt | ext:log | ext:xls | ext:xlsx | ext:xlsm | ext:xlsb | ext:odf | ext:ods
 intext:@"yahoo|gmail|hotmail|teamaol|outlook".com ext:csv | ext:xls "list"
 intext:@"yahoo|gmail|hotmail|teamaol|outlook".com ext:csv "list"
+intext:@"yahoo|gmail|hotmail|teamaol|outlook".com ext:csv "students"
+intext:@"yahoo|gmail|hotmail|teamaol|outlook".com ext:csv | ext:xls "students"
