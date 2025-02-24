@@ -16,13 +16,21 @@ def main():
         os.mkdir("dork_email_scraping/outputs")
     
     # runs the main loop
-    for query in get_all_queries():
-        print(f"[!!!] Using query: {query}")
-        for i in range(0,1000,10):
-            links = make_google_search(i, search_query=query)
-            find_emails(links)
-            print(f"[!] Current searched pages: {i+10}")
-            time.sleep(5)
-            print("__Sleeping 5 seconds__")
+    try:
+        for query in get_all_queries():
+            print(f"[!!!] Using query: {query}")
+            for i in range(0,1000,10):
+                links = make_google_search(i, search_query=query)
+                find_emails(links)
+                print(f"[!] Current searched pages: {i+10}")
+                time.sleep(5)
+                print("__Sleeping 5 seconds__")
 
-    remove_dupes()
+        remove_dupes()
+        print("Done scraping. Quitting...")
+        quit()
+    except KeyboardInterrupt:
+        print("Keyboard interrupt detected. Removing duplicates...")
+        remove_dupes()
+        print("Duplicates removed. Quitting...")
+        quit()
