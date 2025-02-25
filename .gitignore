@@ -2,3 +2,5 @@ config.yml
 */__pycache__
 dork_email_scraping/outputs/output.txt
 dork_email_scraping/outputs/clean_output.txt
+*/.venv
+
