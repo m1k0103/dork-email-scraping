@@ -41,8 +41,7 @@ def make_google_search(start,search_query):
         for item in results["items"]:
             links.append(item["link"])
     except KeyError:
-        print("[+] No more search results found. Quitting...")
-        quit()
+        print("[+] No more search results found.")
     
     print(f"found {len(links)} links")
     return links
@@ -77,7 +76,7 @@ def find_emails(links):
             try:
                 raw_contents = pd.read_excel(url, storage_options=storage_options).to_string()
             except Exception as e:
-                print(f"Error: {e}")
+                print(f"[!!!!] Error: {e}")
                 continue
 
         #uses regex to find email pattern
