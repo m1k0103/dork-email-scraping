@@ -42,8 +42,9 @@ def make_google_search(start,search_query):
             links.append(item["link"])
     except KeyError:
         print("[+] No more search results found.")
-    
-    print(f"found {len(links)} links")
+        return False
+
+    print(f"[++] Found {len(links)} links")
     return links
 
 

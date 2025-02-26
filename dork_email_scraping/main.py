@@ -6,11 +6,15 @@ from multiprocessing import Pool, cpu_count
 #the loop function to which the query is mapped to in the main functon
 def do_loop(query):
     print(f"[!!] Using query: {query}")
-    for i in range(0,1000,10):
+    for i in range(0,2000,10):
         links = make_google_search(i,search_query=query)
+	#if the functions returns False (aka when there are no more results), then the script assumes there were no more google results.
+        if links == False:
+            print(f"[+] Finished searching query: {query}")
+            return
+        # carries on if there are still links to be searched.
         find_emails(links)
-        print(f"[!] Searched {i} pages of {query}")
-    print(f"[+] Finished searching query: {query}")
+        print(f"[+] Searched {i} pages of {query}")
 
 
 #main function
@@ -27,14 +31,14 @@ def main():
     try:
         # creates a new process for a query. much faster than one process handling all queries seperately.
         with Pool(cpu_count()) as p:
-            print(f"[!] Starting execution with {cpu_count()} CPUs.")
+            print(f"[+] Starting execution with {cpu_count()} CPUs.")
             all_queries = get_all_queries()
             p.map(do_loop,(all_queries))
     except KeyboardInterrupt:
-        print("Detecting keyboard interrupt. Removing duplicates and quitting...")
+        print("[!] Detecting keyboard interrupt. Removing duplicates and quitting...")
         remove_dupes()
         quit()
 
     remove_dupes()
-    print("Duplicates removed. Quitting...")
+    print("[!] Duplicates removed. Quitting...")
     quit()
