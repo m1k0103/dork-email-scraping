@@ -5,3 +5,4 @@ intext:@"yahoo|gmail|hotmail|teamaol|outlook".com ext:csv "students"
 intext:@"yahoo|gmail|hotmail|teamaol|outlook".com ext:csv | ext:xls "students"
 site:*.edu | site:*.org -inurl:(login | signup | "contact us" | "directory") filetype:txt | filetype:csv "@gmail.com" "@yahoo.com" -intext:("subject:" | "from:" | "to:" | "http" | "password" | "phone" | "address")
 site:*.edu | site:*.org | site:*.gov -inurl:(login | signup | readme | "contact us" | "contact form") "email list" | "mailing list" | "subscriber list" filetype:csv | filetype:xls "@gmail.com" | "@yahoo.com" | "@hotmail.com" -intext:"fill out"
+inurl:dataset | inurl:emails |  inurl:employees intext:@"gmail|icloud|yahoo".com ext:csv | ext:txt | ext:xls site:.gov | site:.edu | site:.org | site:.io
